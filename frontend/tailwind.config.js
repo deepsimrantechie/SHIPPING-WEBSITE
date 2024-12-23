@@ -5,6 +5,9 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        aeroplane: "url('/src/assets/aeroplane.png')",
+      },
       animation: {
         shake: "shake 0.5s ease-in-out",
         slideInRight: "slideInRight 0.5s ease-in-out",

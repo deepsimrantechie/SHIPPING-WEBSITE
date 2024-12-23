@@ -1,10 +1,13 @@
 import React from "react";
 import { assets } from "../assets/assets";
-
+import aeroplane from "../assets/aeroplane.png";
 const Facility = () => {
   return (
     <div className="mt-14">
-      <div className="relative bg-[url('src/assets/aeroplane.png')] bg-cover bg-center h-screen">
+      <div
+        className="relative  bg-cover bg-center h-screen"
+        style={{ backgroundImage: `url(${aeroplane})` }}
+      >
         <div className="absolute inset-0 bg-black bg-opacity-50">
           <div className="text-white items-center text-center">
             <h1 className="text-5xl mt-10 font-bold">How It Works</h1>
