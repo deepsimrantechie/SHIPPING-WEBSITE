@@ -101,7 +101,7 @@ const Facility = () => {
           </div>
           {/**button hai bhaii--- */}
           <div className="items-center text-center mt-4">
-            <button className="bg-blue-700 px-5 py-2 mb-4 rounded-lg text-white">
+            <button className="bg-blue-700 px-5 py-2 mb-6 rounded-lg text-white">
               Get a quote
             </button>
           </div>
