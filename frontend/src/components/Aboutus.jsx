@@ -6,7 +6,7 @@ const Aboutus = () => {
     <div className="min-h-screen  mt-4">
       <div>
         <h1 className="text-4xl text-center mt-20 font-bold text-gray-500">
-          DO YOU <a className="animate-pulse text-blue-800">WANTS</a> TO TAKE A{" "}
+          DO YOU <a className="animate-pulse text-blue-800">WANT</a> TO TAKE A{" "}
           <a className="animate-pulse text-blue-800"> LOOK </a>?
         </h1>
         <p className="mr-3 ml-6 mt-6 text-lg font-medium text-gray-600">

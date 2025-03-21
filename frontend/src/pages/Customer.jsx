@@ -2,21 +2,23 @@ import React from "react";
 
 const Customer = () => {
   return (
-    <div>
+    <div className="px-4">
       <div>
-        <div className="items-center text-center mt-16 ">
-          <h1 className="text-4xl font-bold">What Our Customer Say</h1>
-          <p className="text-lg mt-2">
-            the customer review which helps you to knows the reating{" "}
+        {/* Header Section */}
+        <div className="text-center mt-16">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">
+            What Our Customers Say
+          </h1>
+          <p className="text-base sm:text-lg mt-2">
+            Customer reviews that help you know the ratings.
           </p>
         </div>
-        {/**--the review boxes- */}
-        <div className="flex flex-col-3 mt-16 space-x-6 mr-2 ml-2">
-          {/**col 1 */}
-          <div className="bg-gray-200 border rounded-lg w-1/3 h-48 items-center justify-around">
-            <h1 className="font-bold mt-2 text-center justify-around">
-              customer rating
-            </h1>
+
+        {/* Review Boxes Section */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-16">
+          {/* Review Box 1 */}
+          <div className="bg-gray-200 border rounded-lg h-48 p-4 flex flex-col items-center justify-between">
+            <h1 className="font-bold text-center">Customer Rating</h1>
             <p className="text-center mt-2">
               John Doe ⭐⭐⭐⭐⭐ <br />
               "Absolutely love this product! The quality exceeded my
@@ -24,30 +26,29 @@ const Customer = () => {
               to anyone considering a purchase!"
             </p>
           </div>
-          {/**col 2 */}
-          <div className="bg-gray-200 border rounded-lg w-1/3 h-48 items-center justify-around">
-            <h1 className="mt-2 font-bold text-center">customer rating</h1>
-            <p className="mt-2 text-center">
-              {" "}
+
+          {/* Review Box 2 */}
+          <div className="bg-gray-200 border rounded-lg h-48 p-4 flex flex-col items-center justify-between">
+            <h1 className="font-bold text-center">Customer Rating</h1>
+            <p className="text-center mt-2">
               John Doe ⭐⭐⭐⭐ <br />
               "Great value for the price. The design is sleek and functional,
               though I wish there were more color options. Overall, very
-              satisfied!"{" "}
+              satisfied!"
             </p>
           </div>
-          {/**col 3 */}
-          <div className="bg-gray-200 border rounded-lg w-1/3 h-48 items-center justify-around">
-            <h1 className="font-bold mt-2 text-center">customer rating</h1>
+
+          {/* Review Box 3 */}
+          <div className="bg-gray-200 border rounded-lg h-48 p-4 flex flex-col items-center justify-between">
+            <h1 className="font-bold text-center">Customer Rating</h1>
             <p className="text-center mt-2">
-              {" "}
-              Michael Brown ⭐⭐⭐⭐⭐
-              <br /> "Fantastic experience from start to finish! The customer
-              support team was helpful, and the product was exactly as
-              described. Will definitely buy again."{" "}
+              Michael Brown ⭐⭐⭐⭐⭐ <br />
+              "Fantastic experience from start to finish! The customer support
+              team was helpful, and the product was exactly as described. Will
+              definitely buy again."
             </p>
           </div>
         </div>
-        {/**the review box end here- */}
       </div>
     </div>
   );
