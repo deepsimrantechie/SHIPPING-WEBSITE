@@ -1,80 +1,164 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { assets } from "../assets/assets";
+import { FiSend, FiArrowRight } from "react-icons/fi";
 
 const Footer = () => {
+  const footerLinks = [
+    {
+      title: "Quick Links",
+      items: ["Home", "Prohibited Items", "Our Partners", "Services"],
+    },
+    {
+      title: "Company",
+      items: ["Our Team", "Blog", "Contact Us", "Privacy Policy"],
+    },
+  ];
+
   return (
-    <div>
-      {/* Background Section */}
-      <div className="relative bg-[url('/src/assets/footer.png')] bg-cover bg-center h-screen">
-        <div className="absolute inset-0 bg-black bg-opacity-50">
-          <div className="text-white text-center space-y-4 mt-10 px-4 sm:px-8">
-            <h1 className="text-4xl font-bold mt-4  sm:text-4xl">
-              Want To Talk
-            </h1>
-            <p className="text-lg mt-2 sm:text-xl">
-              Do you want to connect with us?
-            </p>
-            <button className="rounded-lg bg-blue-500 px-4 py-2 mt-2">
+    <motion.footer
+      className="relative bg-[url('/src/assets/footer.png')] bg-cover bg-center"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-black/90" />
+
+      <div className="relative z-10">
+        {/* CTA Section */}
+        <motion.div
+          className="py-20 px-4 sm:px-8 text-center"
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <motion.h2
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
+            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            Want To Talk?
+          </motion.h2>
+          <motion.p
+            className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-8"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+          >
+            Connect with our shipping experts for personalized solutions
+          </motion.p>
+          <motion.button
+            className="px-8 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 group"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+          >
+            <span className="flex items-center gap-2">
               Get a quote
-            </button>
-          </div>
+              <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
+            </span>
+          </motion.button>
+        </motion.div>
 
-          {/* Divisions */}
-          <div className="text-white flex flex-col sm:flex-row mt-16 items-center justify-center sm:justify-around px-4 sm:px-8">
-            {/* First Division */}
-            <div className="space-y-4 text-center">
-              <p className="text-lg sm:text-xl">
-                This is the shipping company which tells{" "}
+        {/* Footer Content */}
+        <div className="container mx-auto px-4 sm:px-8 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            {/* Brand Info */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-4xl font-bold text-white">shipfit</span>
+              <p className="text-gray-400">
+                Your trusted partner for seamless international shipping and
+                package forwarding solutions.
               </p>
-              <img src={assets.logo} alt="Logo" className="w-52 h-10 mx-auto" />
-            </div>
+            </motion.div>
 
-            {/* Second Division */}
-            <div className="space-y-4 font-semibold text-lg sm:text-xl text-center mt-8 sm:mt-0">
-              <h1>Home</h1>
-              <h1>Prohibited Items</h1>
-              <h1>Our Partner</h1>
-              <h1>Service</h1>
-            </div>
+            {/* Footer Links */}
+            {footerLinks.map((section, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 + index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-white text-lg font-semibold mb-6">
+                  {section.title}
+                </h3>
+                <ul className="space-y-3">
+                  {section.items.map((item, i) => (
+                    <li key={i}>
+                      <a
+                        href="#"
+                        className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
+                      >
+                        <FiArrowRight className="text-xs" />
+                        {item}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
 
-            {/* Third Division */}
-            <div className="space-y-4 font-semibold text-lg sm:text-xl text-center mt-8 sm:mt-0">
-              <h1>Our Team</h1>
-              <h1>Blog</h1>
-              <h1>Contact Us</h1>
-              <h1>Privacy Policy</h1>
-            </div>
-
-            {/* Last Division (Newsletter) */}
-            <div className="text-center mt-8 sm:mt-0">
-              <h1 className="font-bold text-2xl sm:text-3xl">
-                Subscribe to Our Newsletter
-              </h1>
-              <p className="font-semibold text-lg sm:text-xl mt-2">
-                Our special offer and more for tourism
+            {/* Newsletter */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-white text-lg font-semibold mb-6">
+                Newsletter
+              </h3>
+              <p className="text-gray-400 mb-4">
+                Subscribe for shipping tips and exclusive offers
               </p>
-              <div className="flex mt-4 sm:mt-8 space-x-4 justify-center">
+              <div className="flex">
                 <input
-                  type="text"
-                  placeholder="Enter your text"
-                  className="px-8 py-2 rounded-lg text-black"
+                  type="email"
+                  placeholder="Your email"
+                  className="flex-1 px-4 py-3 rounded-l-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
-                <img
-                  src={assets.paper}
-                  alt="Paper Icon"
-                  className="w-10 h-10 animate-bounce"
-                />
+                <button className="bg-blue-600 hover:bg-blue-700 px-4 rounded-r-lg transition-colors">
+                  <FiSend className="text-white text-xl" />
+                </button>
               </div>
-            </div>
-          </div>
-
-          <hr className="border-t-2 border-gray-700 mt-16 mx-6" />
-          <div className="text-center text-white text-lg py-4">
-            <p>© 2024 All Rights Reserved</p>
+            </motion.div>
           </div>
         </div>
+
+        {/* Divider */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="border-t border-gray-800 mx-4 sm:mx-8"
+        />
+
+        {/* Copyright */}
+        <motion.div
+          className="py-6 text-center text-gray-500 text-sm"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+          viewport={{ once: true }}
+        >
+          © {new Date().getFullYear()} ShipSwift. All rights reserved.
+        </motion.div>
       </div>
-    </div>
+    </motion.footer>
   );
 };
 

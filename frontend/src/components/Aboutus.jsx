@@ -1,141 +1,225 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { FiArrowRight } from "react-icons/fi";
 import { assets } from "../assets/assets";
 
 const Aboutus = () => {
+  const stats = [
+    { count: "10,000+", label: "Successful Deliveries" },
+    { count: "50+", label: "Global Partners" },
+    { count: "1M+", label: "Happy Customers" },
+    { count: "24/7", label: "Customer Support" },
+  ];
+
+  const teamMembers = [
+    { name: "Alex Johnson", role: "CEO & Founder", img: assets.team1 },
+    { name: "Sarah Williams", role: "Operations Director", img: assets.team2 },
+    { name: "Michael Chen", role: "Technology Lead", img: assets.team3 },
+  ];
+
+  const coreValues = [
+    {
+      title: "Innovation",
+      description: "We push boundaries with cutting-edge logistics solutions",
+    },
+    {
+      title: "Integrity",
+      description: "Honest and transparent in all our business dealings",
+    },
+    {
+      title: "Customer Focus",
+      description: "Exceptional service tailored to your shipping needs",
+    },
+  ];
+
   return (
-    <div className="min-h-screen  mt-4">
-      <div>
-        <h1 className="text-4xl text-center mt-20 font-bold text-gray-500">
-          DO YOU <a className="animate-pulse text-blue-800">WANT</a> TO TAKE A{" "}
-          <a className="animate-pulse text-blue-800"> LOOK </a>?
-        </h1>
-        <p className="mr-3 ml-6 mt-6 text-lg font-medium text-gray-600">
-          Welcome to [Your Shipping Website Name], your trusted partner for
-          fast, reliable, and efficient shipping solutions. Our mission is to
-          simplify your logistics experience, providing seamless services that
-          cater to businesses and individuals alike. With a commitment to
-          excellence, we offer a wide range of shipping options, from domestic
-          deliveries to international freight. Our cutting-edge technology and
-          experienced team ensure your shipments are handled with utmost care
-          and precision, every step of the way. At [Your Shipping Website Name],
-          customer satisfaction is at the heart of what we do. We take pride in
-          delivering more than just packages – we deliver peace of mind. Whether
-          you're sending a small parcel or managing complex logistics, we're
-          here to meet your needs with transparency, speed, and reliability.
-          Join thousands of satisfied customers who trust us to keep their
-          deliveries moving. Let us help you connect the world, one shipment at
-          a time.
-        </p>
-      </div>
-      {/**the next */}
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <motion.section
+        className="py-20 px-6 lg:px-24 text-center"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <motion.h1
+          className="text-4xl md:text-5xl font-bold text-gray-800 mb-6"
+          initial={{ y: -20 }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          Do You <span className="text-blue-600">Want</span> To Take A{" "}
+          <span className="text-blue-600">Look</span>?
+        </motion.h1>
 
-      <section className="flex items-center justify-center mt-10 space-x-16">
-        {[
-          { count: "10'000", label: "Deliveries" },
-          { count: "10'000", label: "Packages" },
-          { count: "1M", label: "Customers" },
-          { count: "50", label: "Partner" },
-        ].map((stat, index) => (
-          <div key={index} className="text-center">
-            <h2 className="text-2xl font-bold">{stat.count}</h2>
-            <p className="text-gray-600">{stat.label}</p>
-          </div>
-        ))}
-      </section>
-      {/**the end  */}
-      <div className="text-4xl h-52 mt-14">
-        <h1 className="text-4xl text-center font-bold  text-gray-500 ">
-          Our <a className="text-blue-800 animate-pulse"> Mission</a>
-        </h1>
-        <p className="mr-3 ml-6 mt-6 text-lg font-medium text-gray-600">
-          Our mission is to create innovative, user-centric, and sustainable
-          digital solutions that empower individuals and businesses. By
-          combining cutting-edge technology with a commitment to excellence, we
-          aim to deliver seamless experiences that inspire creativity, foster
-          growth, and drive positive change in the world.
-        </p>
-      </div>
+        <motion.p
+          className="max-w-4xl mx-auto text-lg text-gray-600 leading-relaxed"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+        >
+          Welcome to ShipSwift, your trusted partner for fast, reliable, and
+          efficient shipping solutions. Our mission is to simplify logistics
+          with seamless services for businesses and individuals. With
+          cutting-edge technology and an experienced team, we handle every
+          shipment with care and precision.
+        </motion.p>
+      </motion.section>
 
-      {/**our team */}
-      <section className="bg-white py-20 px-6 lg:px-24">
-        <h2 className="text-4xl font-bold mb-16 text-center">
-          MeeT Our <a className="animate-pulse text-blue-800">Team</a>
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <img
-              src=""
-              alt=""
-              className="w-32 h-32 mx-auto rounded-full mb-4"
-            />
-            <h3 className="text-xl font-semibold">John Doe</h3>
-            <p className="text-gray-500">CEO & Founde</p>
-          </div>
-          <div className="text-center">
-            <img
-              src=""
-              alt=""
-              className="w-32 h-32 mx-auto rounded-full mb-4"
-            />
-            <h3 className="text-xl font-semibold">John Doe</h3>
-            <p className="text-gray-500">CEO & Founde</p>
-          </div>
-          <div className="text-center">
-            <img
-              src=""
-              alt=""
-              className="w-32 h-32 mx-auto rounded-full mb-4"
-            />
-            <h3 className="text-xl font-semibold">John Doe</h3>
-            <p className="text-gray-500">CEO & Founde</p>
-          </div>
+      {/* Stats Section */}
+      <motion.section
+        className="py-16 bg-blue-50"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto px-6">
+          {stats.map((stat, index) => (
+            <motion.div
+              key={index}
+              className="text-center p-6"
+              initial={{ scale: 0.9 }}
+              whileInView={{ scale: 1 }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
+            >
+              <h3 className="text-3xl font-bold text-blue-600 mb-2">
+                {stat.count}
+              </h3>
+              <p className="text-gray-600">{stat.label}</p>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
+
+      {/* Mission Section */}
+      <motion.section
+        className="py-20 px-6 lg:px-24 bg-white"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12"
+          initial={{ y: -20 }}
+          whileInView={{ y: 0 }}
+        >
+          Our <span className="text-blue-600">Mission</span>
+        </motion.h2>
+
+        <motion.div
+          className="max-w-4xl mx-auto"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+        >
+          <p className="text-lg text-gray-600 leading-relaxed text-center">
+            To revolutionize global shipping through innovative,
+            customer-centric solutions that deliver reliability, speed, and
+            transparency. We're committed to connecting the world with seamless
+            logistics that empower businesses and individuals alike.
+          </p>
+        </motion.div>
+      </motion.section>
+
+      {/* Team Section */}
+      <section className="py-20 px-6 lg:px-24 bg-gray-50">
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-16"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+        >
+          Meet Our <span className="text-blue-600">Team</span>
+        </motion.h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+          {teamMembers.map((member, index) => (
+            <motion.div
+              key={index}
+              className="bg-white p-8 rounded-xl shadow-md text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2 }}
+              whileHover={{ y: -10 }}
+            >
+              <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-blue-100">
+                <img
+                  src={member.img}
+                  alt={member.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-gray-800">{member.name}</h3>
+              <p className="text-blue-600 mb-4">{member.role}</p>
+              <div className="flex justify-center space-x-4">
+                {/* Social icons would go here */}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
-      {/**the core values */}
-      {/**--core section value--- */}
-      <section className="py-20 px-6 lg:px-24 text-center bg-gray-100">
-        <h2 className="text-3xl font-semibold mb-6">Our Core Value</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-          <div>
-            <h3 className="text-xl font-semibold text-blue-800">Innovation</h3>
-            <p className="text-gray-600">
-              We strive to push the boundaries of what’s possible, constantly
-              innovating to stay ahead of the curve.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold text-blue-800">Integrity</h3>
-            <p className="text-gray-600">
-              We conduct our business with honesty and transparency, ensuring
-              trust with our customers and partners.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold text-blue-800">
-              {" "}
-              Customer Focus
-            </h3>
-            <p className="text-gray-600">
-              We put our customers first, constantly striving to understand
-              their needs and provide exceptional service.
-            </p>
-          </div>
+
+      {/* Core Values */}
+      <section className="py-20 px-6 lg:px-24 bg-white">
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-16"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+        >
+          Our Core <span className="text-blue-600">Values</span>
+        </motion.h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+          {coreValues.map((value, index) => (
+            <motion.div
+              key={index}
+              className="bg-blue-50 p-8 rounded-xl"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: index * 0.2 }}
+              whileHover={{ scale: 1.03 }}
+            >
+              <h3 className="text-xl font-bold text-blue-600 mb-4">
+                {value.title}
+              </h3>
+              <p className="text-gray-600">{value.description}</p>
+            </motion.div>
+          ))}
         </div>
       </section>
-      {/**--the call to action section------ */}
-      <section className=" text-white py-16 px-6 text-center">
-        <h2 className="text-3xl font-semibold mb-4 text-blue-800">
-          Join Our Journey
-        </h2>
-        <p className="text-lg mb-6 text-blue-800">
-          Be a part of our growing community! Together, we can achieve great
-          things.
-        </p>{" "}
-        <a className="bg-blue-800 text-white py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300">
-          Get in Touch
-        </a>
-      </section>
-      {/**the end  */}
+
+      {/* CTA Section */}
+      <motion.section
+        className="py-20 px-6 text-center bg-gradient-to-r from-blue-600 to-blue-800 text-white"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+      >
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold mb-6"
+          initial={{ y: -20 }}
+          whileInView={{ y: 0 }}
+        >
+          Join Our Shipping Revolution
+        </motion.h2>
+
+        <motion.p
+          className="text-xl mb-8 max-w-2xl mx-auto"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+        >
+          Experience the future of logistics with our reliable shipping
+          solutions
+        </motion.p>
+
+        <motion.button
+          className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold flex items-center mx-auto gap-2 hover:bg-blue-50 transition-colors"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          Get Started <FiArrowRight />
+        </motion.button>
+      </motion.section>
     </div>
   );
 };
